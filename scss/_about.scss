@@ -1,0 +1,230 @@
+.grid-container {
+    height: 1100px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 28% 72%;
+    @media only screen and (max-width: 460px) {
+            grid-template-rows: 25% 75%;
+            height: 980px;
+            }
+    grid-template-areas: "about__title" "about__content";
+}
+
+.about__title { grid-area: about__title; 
+    justify-self: center;
+    text-align: center;
+    padding-top: 66px; 
+
+
+    h1{
+        font-family: 'Hind', sans-serif;
+        font-size: 36px;
+        color: #2f2f2f;
+        @media only screen and (max-width: 950px) {
+            font-size: 28px;
+            }
+        }
+        @media only screen and (max-width: 600px) {
+            font-size: 24px;
+            }
+        }
+    p{
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        color: #565e66;
+        padding-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        @media only screen and (max-width: 950px) {
+            font-size: 12px;
+            }
+        @media only screen and (max-width: 600px) {
+            font-size: 10px;
+            }
+        
+        
+        
+    }
+
+.about__content { grid-area: about__content; 
+    justify-self: center;
+    text-align: center;
+    
+   
+    .circle{
+        position: relative;
+        
+        background-image: url("../images/kolo.png");
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-size: 469px 469px;
+        @media only screen and (max-width: 1350px) {
+        background-size: 269px 269px;
+        }
+         @media only screen and (max-width: 1150px) {
+        background-size: 200px 200px;
+        }
+        @media only screen and (max-width: 600px) {
+        background-size: 140px 140px;
+        } 
+        @media only screen and (max-width: 460px) {
+        background: none;
+        }         
+
+        
+        
+        p{
+            position: absolute;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-top: 0;
+            text-transform: uppercase;
+            color: #ffffff;
+            
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            @media only screen and (max-width: 950px) {
+            font-size: 8px;
+            } 
+            
+            }
+        
+    .mobile-container{
+        display: none;
+         @media only screen and (max-width: 460px) {
+            display: flex;
+            flex-direction: column;
+            padding: 15px 15px;
+            li{
+                a{
+                    font-size: 12px;
+                    text-decoration: none;
+                    background-color: transparent; 
+                    color: #2f2f2f;
+                    font-family: 'Hind', sans-serif;}
+                
+            img { 
+                width: 40px;
+                height: 40px;
+            }
+                display: flex;
+                align-items: center;
+                padding-bottom: 15px;
+                span{
+                    padding-left: 15px;
+                    }
+
+                    }
+            }
+        }
+    .circle-container {
+        
+        @include on-circle($item-count: 12, $circle-size: 590px, $item-size: 80px); 
+        @media only screen and (max-width: 1350px) {
+            @include on-circle($item-count: 12, $circle-size: 390px, $item-size: 60px);
+            }
+        @media only screen and (max-width: 1150px) {
+            @include on-circle($item-count: 12, $circle-size: 290px, $item-size: 20px);
+            }
+        @media only screen and (max-width: 950px) {
+            @include on-circle($item-count: 12, $circle-size: 240px, $item-size: 20px);
+            }
+        @media only screen and (max-width: 600px) {
+            @include on-circle($item-count: 12, $circle-size: 180px, $item-size: 20px);
+            }
+        @media only screen and (max-width: 460px) {
+            display: none;
+            }
+                
+        
+        border: solid 1px #d7dde2;
+    
+        img { 
+            display: block;
+            @media only screen and (max-width: 1350px) {
+                width: 60px;
+                height: 60px;
+            }  
+            @media only screen and (max-width: 1150px) {
+                width: 40px;
+                height: 40px;
+            }
+            @media only screen and (max-width: 600px) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            white-space:nowrap;
+            @media only screen and (max-width: 850px) {
+               white-space: normal;
+                
+            }
+            
+        a{
+            text-decoration: none;
+            background-color: transparent; 
+            color: #2f2f2f;
+            font-family: 'Hind', sans-serif;
+            font-size: 16px;
+             @media only screen and (max-width: 1150px) {
+            font-size: 12px;
+            }   
+                @media only screen and (max-width: 950px) {
+            font-size: 10px;
+            }  
+               @media only screen and (max-width: 840px) {
+            font-size: 8px;
+            margin-top: 5px;
+            }    
+            }
+        span{
+            padding-left: 22px;
+            
+            }        
+        &:nth-child(4){
+            flex-direction: column;
+            span{
+            padding-top:  22px;
+            padding-left: 0;
+            }
+            }
+        &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8), &:nth-child(9){
+            flex-direction: row-reverse;
+            span{
+                padding-right: 22px;
+            }
+
+            }
+        &:nth-child(10){
+            flex-direction: column-reverse;
+            span{
+                padding-bottom:  22px;
+                padding-left: 0;
+        }
+        
+        }
+
+        }
+        }
+    }
+ 
+    }
+
+
+@media only screen and (max-width: 1350px) {
+
+    .circle{
+        
+        background-size: 269px 269px;
+    }
+}
+
+
+
+
